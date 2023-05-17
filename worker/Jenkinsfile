@@ -9,7 +9,7 @@ pipeline {
             steps{
                 echo 'compiling worker app'
                 dir('worker'){
-                 sh 'maven compile'   
+                 sh 'mvn compile'   
                 }
             }
 
