@@ -16,7 +16,9 @@ pipeline {
         }
         stage('test'){
             steps{
-                echo "Running unit Test on worker app"
+                echo "Running unit Test on worker app"{
+                    sh 'mvn clean test'
+                }
             }
         }
         stage('package'){
