@@ -5,7 +5,7 @@ pipeline {
         nodejs 'NodeJS 8.9.0'
     }
     stages{
-        stage(build){
+        stage('build'){
             when{
                 changeset "**/result/**"
             }
@@ -17,7 +17,7 @@ pipeline {
             }
 
         }
-        stage(test)
+        stage('test')
             when{
                 changeset "**/result/**"
             }
@@ -25,12 +25,11 @@ pipeline {
                 echo 'Running unit Test on result app..'
                     dir('result'){
                        sh 'npm install'
-                    }   sh 'npm test'
+                       sh 'npm test'
                     
             }
         }
 
 
     } 
-
-
+}
