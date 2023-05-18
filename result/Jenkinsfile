@@ -5,31 +5,29 @@ pipeline {
         nodejs 'NodeJS 8.9.0'
     }
     stages{
-        stage('build'){
+        stage(bulid){
             when{
-                changeset "**/result/**"
+                changeset"**/result/**"
             }
             steps{
-                echo 'compiling result app'
+                echo 'compiling result app ..'
                 dir('worker'){
-                 sh 'npm install'   
+                    sh 'npm install'
                 }
             }
-
         }
-        stage('test')
+        stage(test){
             when{
-                changeset "**/result/**"
+                changeset"**/result/**"
             }
             steps{
-                echo 'Running unit Test on result app..'
-                    dir('result'){
-                       sh 'npm install'
-                       sh 'npm test'
-                    
+                echo 'Running unit Tests on result app..'
+                dir('result'){
+                    sh 'npm install'
+                    sh 'npm test'
+                }
             }
         }
 
-
-    } 
+    }
 }
