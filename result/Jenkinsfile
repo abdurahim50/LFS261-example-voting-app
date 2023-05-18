@@ -25,7 +25,7 @@ pipeline {
                 echo 'Running unit Test on result app..'
                     dir('result'){
                        sh 'npm install'
-                       sh 'npm test'
+                    }   sh 'npm test'
                     
             }
         }
@@ -33,3 +33,4 @@ pipeline {
 
     } 
 }
+
